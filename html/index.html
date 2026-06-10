@@ -14,7 +14,7 @@ body{background:#0a0a0a;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;font-
 .g-text{background:linear-gradient(90deg,#00E5FF 0%,#00C9A7 40%,#1D9E75 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:0.5px solid #e8e8e8;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between}
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:0.5px solid #e8e8e8;padding:0 40px;height:84px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:#111}
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{font-size:12px;letter-spacing:.08em;color:#888;text-decoration:none;text-transform:uppercase;transition:color .2s}
@@ -29,8 +29,8 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:0.5px solid 
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,5,30,.18) 0%,transparent 55%);pointer-events:none}
 .hero-slides{display:flex;width:500%;height:100%;transition:transform .75s cubic-bezier(.77,0,.175,1)}
 .hero-slide{width:20%;height:100%;position:relative;flex-shrink:0}
-.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;opacity:.15;mix-blend-mode:luminosity}
-.hero-slide-overlay{display:none}
+.hero-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1}
+.hero-slide-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.2) 60%,transparent 100%)}
 .hero-content{position:absolute;inset:0;z-index:10;display:flex;align-items:center;padding:0 56px}
 .hero-inner{max-width:640px;position:relative}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.2);padding:5px 12px;border-radius:20px;margin-bottom:24px;font-weight:600;backdrop-filter:blur(4px)}
@@ -96,7 +96,7 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:88px;line-height:.92;letter-spa
 .events{padding:80px 40px;background:#080808;border-top:0.5px solid #1a1a1a}
 .events-inner{max-width:1000px;margin:0 auto}
 .events-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
-.events-desc{font-size:13px;color:#555;font-weight:300;max-width:320px;line-height:1.65}
+.events-desc{font-size:13px;color:#aaa;font-weight:300;max-width:320px;line-height:1.65}
 .logo-strip{display:flex;flex-wrap:wrap;gap:10px}
 .logo-pill{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#aaa;padding:8px 18px;border:0.5px solid #333;border-radius:3px;font-weight:600;background:#141414;transition:all .2s;cursor:default}
 .logo-pill:hover{color:#fff;border-color:#555}
@@ -160,21 +160,21 @@ h1{font-family:'Bebas Neue',sans-serif;font-size:88px;line-height:.92;letter-spa
 .contact{padding:80px 40px;background:#080808;border-top:0.5px solid #1a1a1a}
 .contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .contact-h{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.04em;line-height:1;margin-bottom:16px}
-.contact-sub{font-size:13px;color:#555;line-height:1.65;font-weight:300;margin-bottom:32px}
+.contact-sub{font-size:14px;color:#999;line-height:1.65;font-weight:300;margin-bottom:32px}
 .channels{display:flex;flex-direction:column;gap:10px}
-.channel{display:flex;align-items:center;gap:12px;font-size:12px;color:#555;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border:0.5px solid #1e1e1e;border-radius:2px;text-decoration:none;transition:border-color .2s}
-.channel:hover{border-color:#333}
+.channel{display:flex;align-items:center;gap:12px;font-size:13px;color:#ccc;letter-spacing:.06em;text-transform:uppercase;padding:14px 18px;border:0.5px solid #333;border-radius:2px;text-decoration:none;transition:border-color .2s;font-weight:500}
+.channel:hover{border-color:#00C9A7;color:#fff}
 .channel i{font-size:18px;background:linear-gradient(90deg,#00E5FF,#1D9E75);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .lang-row{display:flex;gap:6px;margin-bottom:14px}
 .lang-btn{font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:2px;border:0.5px solid #222;color:#444;background:transparent;font-family:'Nunito Sans',sans-serif;cursor:pointer;transition:all .15s}
 .lang-btn.active{border-color:#00C9A7;color:#00C9A7}
 .cf{display:flex;flex-direction:column;gap:10px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-input[type=text],input[type=email]{background:#0f0f0f;border:0.5px solid #222;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;transition:border-color .2s}
+input[type=text],input[type=email]{background:#0f0f0f;border:0.5px solid #333;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;transition:border-color .2s}
 input:focus{border-color:#00C9A7}
-textarea{background:#0f0f0f;border:0.5px solid #222;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;resize:none;height:96px;transition:border-color .2s}
+textarea{background:#0f0f0f;border:0.5px solid #333;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;resize:none;height:96px;transition:border-color .2s}
 textarea:focus{border-color:#00C9A7}
-::placeholder{color:#333}
+::placeholder{color:#666}
 .btn-submit{background:linear-gradient(90deg,#00E5FF,#00C9A7 50%,#1D9E75);color:#0a0a0a;border:none;padding:13px 32px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif;border-radius:2px;cursor:pointer;font-weight:500;align-self:flex-start}
 
 /* FOOTER */
@@ -192,7 +192,7 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
 <body>
 
 <nav>
-  <img src="SSM.png" alt="Spirit Sports & Marketing" style="height:38px;width:auto;object-fit:contain">
+  <img src="SSM.png" alt="Spirit Sports & Marketing" style="height:68px;width:auto;object-fit:contain">
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#events">Events</a>
@@ -207,11 +207,11 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
   <div class="hero-block2"></div>
   <div class="hero-overlay"></div>
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600&q=80" alt="Athletics"><div class="hero-slide-overlay"></div></div>
-    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1600&q=80" alt="Soccer"><div class="hero-slide-overlay"></div></div>
-    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&q=80" alt="Stadium"><div class="hero-slide-overlay"></div></div>
-    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=1600&q=80" alt="Swimming"><div class="hero-slide-overlay"></div></div>
-    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=1600&q=80" alt="Rugby"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"><img src="Hero2.jpg" alt="Olympic Broadcast Operations"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="Hero3.jpg" alt="FIFA World Cup Stadium"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="Hero1.jpg" alt="FIFA World Cup Qatar"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="Hero4.jpg" alt="Expo 2025"><div class="hero-slide-overlay"></div></div>
   </div>
   <div class="hero-content">
     <div class="hero-inner">
@@ -369,7 +369,7 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
         <div class="section-eyebrow">Track record</div>
         <div class="section-title"><span class="g-text">Milestones</span></div>
       </div>
-      <div class="events-desc">Working with the world's most prestigious sporting bodies across 7 global regions since 2020.</div>
+      <div class="events-desc" style="color:#aaa">Working with the world's most prestigious sporting bodies across 7 global regions since 2020.</div>
     </div>
 
     <div class="timeline fade-up">
@@ -484,7 +484,7 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
       <div class="section-eyebrow">About</div>
       <div class="about-quote">The person<br>behind <span class="g-text">the story.</span></div>
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
-        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#29bcf0,#7c4dff);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;flex-shrink:0">HO</div>
+        <img src="Hiro_Ono_Profile.jpg" alt="Hiro Ono" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid #e0e0dc">
         <div>
           <div style="font-size:16px;font-weight:600;color:#111;font-family:'Nunito Sans',sans-serif">Hiro Ono</div>
           <div style="font-size:12px;color:#00A882;letter-spacing:.1em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif">Founder, Spirit Sports & Marketing</div>
@@ -530,15 +530,10 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
       <div class="contact-h"><span class="g-text">Let's Work</span><br>Together</div>
       <div class="contact-sub">Whether you're a broadcaster, federation, or brand — we'd love to hear about your project.</div>
       <div class="channels">
-        <a href="mailto:hiroaki.ono@spiritsports.com.hk" class="channel"><i class="ti ti-mail"></i> hiroaki.ono@spiritsports.com.hk</a>
+        <a href="mailto:info@spiritsports.com.hk" class="channel"><i class="ti ti-mail"></i> info@spiritsports.com.hk</a>
       </div>
     </div>
     <div class="fade-up">
-      <div class="lang-row">
-        <button class="lang-btn active">EN</button>
-        <button class="lang-btn">日本語</button>
-        <button class="lang-btn">繁中</button>
-      </div>
       <div class="cf">
         <div class="form-row">
           <input type="text" placeholder="Name">
@@ -560,17 +555,17 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
       <span style="width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#6366f1);display:inline-block"></span>
       Sister Brand — Coming 2026
     </div>
-    <div style="background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:280px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
-      <div style="background:#0c1220;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
-        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);background-size:32px 32px"></div>
-        <div style="position:absolute;top:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.08) 0%,transparent 70%)"></div>
+      <div style="background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:280px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+      <div style="background:linear-gradient(135deg,#e8f4ff 0%,#d6eaff 50%,#e4edff 100%);padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.08) 1px,transparent 1px);background-size:32px 32px"></div>
+        <div style="position:absolute;top:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.2) 0%,transparent 70%)"></div>
         <div style="position:relative;z-index:1">
           <img src="Trent_Logo.png" alt="Trent Media Works" style="height:64px;width:auto;object-fit:contain;margin-bottom:16px;display:block">
-          <div style="display:inline-flex;align-items:center;gap:6px;font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(99,102,241,.12);color:#818cf8;padding:5px 12px;border-radius:20px;border:0.5px solid rgba(99,102,241,.2)">
-            <span style="width:5px;height:5px;border-radius:50%;background:#818cf8;display:inline-block"></span>Est. 2026 — Japan
+          <div style="display:inline-flex;align-items:center;gap:6px;font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(56,189,248,.15);color:#0284c7;padding:5px 12px;border-radius:20px;border:0.5px solid rgba(56,189,248,.3)">
+            <span style="width:5px;height:5px;border-radius:50%;background:#0284c7;display:inline-block"></span>Est. 2026 — Japan
           </div>
         </div>
-        <div style="position:relative;z-index:1;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#4a6080;line-height:1.7;font-weight:300;max-width:280px">A digital solutions company powered by generative AI. Supporting web, tool, and content production across all industries.</div>
+        <div style="position:relative;z-index:1;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#334e68;line-height:1.7;font-weight:400;max-width:280px">A digital solutions company powered by generative AI. Supporting web, tool, and content production across all industries.</div>
       </div>
       <div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;background:#fff">
         <div>
@@ -598,7 +593,7 @@ footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:
 
 <footer>
   <img src="SSM.png" alt="Spirit Sports & Marketing" style="height:28px;width:auto;object-fit:contain;opacity:.4">
-  <div class="footer-copy">© 2025 Spirit Sports &amp; Marketing Limited — Hong Kong</div>
+  <div class="footer-copy">© 2025 Spirit Sports & Marketing Ltd. / Trent LLC</div>
 </footer>
 
 <script>
