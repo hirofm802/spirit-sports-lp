@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spirit Sports & Marketing Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0a0a;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;font-weight:400}
+
+.g-text{background:linear-gradient(90deg,#00E5FF 0%,#00C9A7 40%,#1D9E75 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:0.5px solid #e8e8e8;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.12em;color:#111}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:12px;letter-spacing:.08em;color:#888;text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#111}
+.nav-cta{background:linear-gradient(90deg,#29bcf0,#7c4dff)!important;color:#fff!important;padding:8px 20px;border-radius:3px;font-weight:600}
+
+/* HERO SLIDER */
+.hero{position:relative;width:100%;height:90vh;min-height:560px;overflow:hidden;background:linear-gradient(125deg,#29bcf0 0%,#4a90e2 30%,#7c4dff 65%,#9c6ffd 100%)}
+.hero-chevron{position:absolute;inset:-50%;width:200%;height:200%;opacity:.13;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cpolyline points='0,60 60,0 120,60' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E");background-size:120px 60px;background-repeat:repeat;transform:rotate(-30deg)}
+.hero-block1{position:absolute;top:-10%;left:30px;width:120px;height:130%;background:rgba(255,255,255,.07);transform:skewX(-7deg);pointer-events:none}
+.hero-block2{position:absolute;top:-10%;left:120px;width:30px;height:130%;background:rgba(255,255,255,.04);transform:skewX(-7deg);pointer-events:none}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,5,30,.18) 0%,transparent 55%);pointer-events:none}
+.hero-slides{display:flex;width:500%;height:100%;transition:transform .75s cubic-bezier(.77,0,.175,1)}
+.hero-slide{width:20%;height:100%;position:relative;flex-shrink:0}
+.hero-slide img{width:100%;height:100%;object-fit:cover;display:block;opacity:.15;mix-blend-mode:luminosity}
+.hero-slide-overlay{display:none}
+.hero-content{position:absolute;inset:0;z-index:10;display:flex;align-items:center;padding:0 56px}
+.hero-inner{max-width:640px;position:relative}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.2);padding:5px 12px;border-radius:20px;margin-bottom:24px;font-weight:600;backdrop-filter:blur(4px)}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#fff;flex-shrink:0}
+h1{font-family:'Bebas Neue',sans-serif;font-size:88px;line-height:.92;letter-spacing:.03em;color:#fff;margin-bottom:24px;text-shadow:0 2px 20px rgba(0,0,0,.15)}
+.boxed{display:inline-block;border:3px solid #fff;padding:2px 14px 0;margin-left:8px;line-height:.95}
+.typewriter{display:inline}
+.cursor{display:inline-block;font-weight:300;animation:blink .7s step-end infinite;margin-left:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.85);max-width:500px;line-height:1.7;margin-bottom:36px;font-weight:400}
+.hero-sub .gold{color:#fde68a;font-weight:600}
+.hero-actions{display:flex;gap:14px;align-items:center;margin-bottom:48px}
+.btn-primary{background:#fff;color:#3a1a8a;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:13px 32px;border-radius:3px;text-decoration:none;font-weight:700}
+.btn-outline{background:rgba(255,255,255,.15);color:#fff;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:13px 32px;border-radius:3px;text-decoration:none;border:1.5px solid rgba(255,255,255,.6);backdrop-filter:blur(4px)}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap}
+.hero-tag{font-size:11px;color:rgba(255,255,255,.7);letter-spacing:.06em;padding:5px 14px;border-radius:2px;border:0.5px solid rgba(255,255,255,.3);text-transform:uppercase;background:rgba(255,255,255,.1)}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:20;background:rgba(255,255,255,.15);border:0.5px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s;font-size:18px}
+.hero-arrow:hover{background:rgba(255,255,255,.3)}
+.hero-arrow-prev{left:20px}
+.hero-arrow-next{right:20px}
+.hero-dots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:8px}
+.hero-dot-btn{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;border:none;padding:0}
+.hero-dot-btn.active{width:24px;background:#fff}
+.hero-counter{position:absolute;bottom:32px;right:40px;z-index:20;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.1em;font-family:'Nunito Sans',sans-serif}
+.hero-counter span{color:#fff}
+
+/* STATS */
+.stats{background:#0a0a0a;border-top:none;border-bottom:none}
+.stats-inner{max-width:1000px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:32px 0 32px 32px;border-right:0.5px solid #1e1e1e}
+.stat-item:first-child{padding-left:0}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:.04em;line-height:1;background:linear-gradient(90deg,#29bcf0,#7c4dff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:12px;color:#fff;letter-spacing:.12em;text-transform:uppercase;margin-top:6px;font-weight:400}
+
+/* SERVICES */
+.services{padding:80px 40px;background:#f8f8f6}
+.services-inner{max-width:1000px;margin:0 auto}
+.section-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#00A882;margin-bottom:14px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.04em;line-height:1;margin-bottom:44px;color:#111}
+.svc-cards-top{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+.svc-cards-bot{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.svc-card{background:#fff;border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.svc-card-cover{width:100%;aspect-ratio:1/1;position:relative;overflow:hidden}
+.svc-cards-bot .svc-card-cover{aspect-ratio:16/7}
+.svc-card-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.svc-card:hover .svc-card-cover img{transform:scale(1.06)}
+.svc-cover-inner{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:rgba(0,0,0,.18);transition:background .3s}
+.svc-card:hover .svc-cover-inner{background:rgba(0,0,0,.32)}
+.svc-cover-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:8px}
+.svc-cover-title{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.92;letter-spacing:.04em;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.svc-cover-icon{font-size:26px;color:rgba(255,255,255,.8);margin-top:10px}
+.svc-cover-badge{display:inline-block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-top:10px;font-weight:500;background:rgba(255,255,255,.2);color:#fff}
+.svc-card-body{padding:14px 16px 18px}
+.svc-card-num{font-size:11px;letter-spacing:.1em;color:#ccc;margin-bottom:4px}
+.svc-card-title-text{font-size:14px;font-weight:500;color:#111;margin-bottom:6px;display:flex;align-items:center;gap:4px}
+.svc-card-title-text i{font-size:12px;color:#00C9A7}
+.svc-card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.svc-tag{font-size:9px;letter-spacing:.05em;padding:2px 8px;border-radius:20px}
+.svc-card-desc{font-size:11px;color:#999;line-height:1.6;font-weight:300}
+
+/* EVENTS */
+.events{padding:80px 40px;background:#080808;border-top:0.5px solid #1a1a1a}
+.events-inner{max-width:1000px;margin:0 auto}
+.events-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
+.events-desc{font-size:13px;color:#555;font-weight:300;max-width:320px;line-height:1.65}
+.logo-strip{display:flex;flex-wrap:wrap;gap:10px}
+.logo-pill{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#aaa;padding:8px 18px;border:0.5px solid #333;border-radius:3px;font-weight:600;background:#141414;transition:all .2s;cursor:default}
+.logo-pill:hover{color:#fff;border-color:#555}
+.logo-pill.gold{border-color:rgba(186,117,23,.5);color:#e8a020;background:rgba(186,117,23,.06)}
+.logo-pill.gold:hover{border-color:#BA7517;color:#f0b030}
+
+/* ABOUT */
+.about{padding:80px 40px;background:#f8f8f6;border-top:0.5px solid #e8e8e4}
+.about-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-quote{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.04em;color:#111;line-height:1.2;margin-bottom:20px}
+.about-body{font-size:13px;color:#666;line-height:1.75;font-weight:300}
+.about-meta{margin-top:28px;padding-top:20px;border-top:0.5px solid #e0e0dc;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.meta-label{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.1em}
+.meta-val{font-size:13px;color:#555;margin-top:4px}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
+.region-tag{font-size:11px;color:#666;letter-spacing:.08em;text-transform:uppercase;padding:9px 12px;border:0.5px solid #ddd;border-radius:2px;display:flex;align-items:center;gap:7px;background:#fff}
+.region-dot{width:4px;height:4px;border-radius:50%;background:linear-gradient(135deg,#00E5FF,#1D9E75);flex-shrink:0}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;border-top:0.5px solid #1e1e1e;border-bottom:0.5px solid #1e1e1e;padding:20px 0;position:relative}
+.marquee-wrap::before,.marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee-wrap::before{left:0;background:linear-gradient(to right,#0a0a0a,transparent)}
+.marquee-wrap::after{right:0;background:linear-gradient(to left,#0a0a0a,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-inner{display:flex;align-items:center;gap:0;white-space:nowrap}
+.marquee-item{font-family:'Nunito Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#888;padding:0 20px;transition:color .2s;cursor:default}
+.marquee-item:hover{color:#fff}
+.marquee-item.gold{color:#BA7517}
+.marquee-item.gold:hover{color:#e8a020}
+.marquee-sep{color:#2a2a2a;font-size:12px;flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* TIMELINE */
+.timeline{position:relative;padding-bottom:8px;overflow-x:auto}
+.timeline-line{position:absolute;top:5px;left:0;right:0;height:4px;background:#1e1e1e;border-radius:2px}
+.timeline-progress{position:absolute;top:5px;left:0;height:4px;background:linear-gradient(90deg,#00E5FF,#00C9A7 50%,#1D9E75);width:0;transition:width 1.4s ease;border-radius:2px}
+.tl-years{display:flex;justify-content:space-between;position:relative;min-width:700px}
+.tl-col{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;cursor:pointer}
+.tl-dot{width:18px;height:18px;border-radius:50%;border:3px solid #333;background:#0a0a0a;position:relative;z-index:2;transition:all .25s;flex-shrink:0;margin-bottom:14px}
+.tl-col.tl-active .tl-dot,.tl-col:hover .tl-dot{border-color:#00C9A7;background:#00C9A7;box-shadow:0 0 14px rgba(0,201,167,.5)}
+.tl-col.tl-future .tl-dot{border-color:#BA7517}
+.tl-col.tl-future.tl-active .tl-dot,.tl-col.tl-future:hover .tl-dot{background:#BA7517;border-color:#BA7517;box-shadow:0 0 14px rgba(186,117,23,.5)}
+.tl-year{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:#555;transition:color .25s;margin-bottom:10px}
+.tl-col.tl-active .tl-year,.tl-col:hover .tl-year{color:#fff}
+.tl-col.tl-future .tl-year{color:#BA7517;opacity:.9}
+.tl-card{background:#141414;border:0.5px solid #2a2a2a;border-radius:6px;padding:12px;margin:0 3px;width:100%;min-height:80px;transition:border-color .25s,background .25s}
+.tl-col.tl-active .tl-card,.tl-col:hover .tl-card{border-color:#00C9A7;background:#0d2018}
+.tl-col.tl-future.tl-active .tl-card,.tl-col.tl-future:hover .tl-card{border-color:#BA7517;background:#1a1200}
+.tl-badge-founded{display:inline-block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;background:linear-gradient(90deg,#00E5FF,#1D9E75);color:#0a0a0a;padding:2px 8px;border-radius:20px;font-weight:700;margin-bottom:6px}
+.tl-badge-now{display:inline-block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;background:rgba(186,117,23,.2);color:#BA7517;padding:2px 8px;border-radius:20px;font-weight:600;margin-bottom:6px;border:0.5px solid rgba(186,117,23,.4)}
+.tl-events{display:flex;flex-direction:column;gap:5px}
+.tl-event{display:flex;align-items:flex-start;gap:5px}
+.tl-edot{width:4px;height:4px;border-radius:50%;background:#00C9A7;flex-shrink:0;margin-top:5px}
+.tl-col.tl-future .tl-edot{background:#BA7517}
+.tl-etext{font-size:11px;color:#888;line-height:1.4;transition:color .25s;font-weight:400}
+.tl-col.tl-active .tl-etext,.tl-col:hover .tl-etext{color:#e0e0e0}
+.tl-col.tl-future.tl-active .tl-etext,.tl-col.tl-future:hover .tl-etext{color:#c9a060}
+
+/* CONTACT */
+.contact{padding:80px 40px;background:#080808;border-top:0.5px solid #1a1a1a}
+.contact-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-h{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:.04em;line-height:1;margin-bottom:16px}
+.contact-sub{font-size:13px;color:#555;line-height:1.65;font-weight:300;margin-bottom:32px}
+.channels{display:flex;flex-direction:column;gap:10px}
+.channel{display:flex;align-items:center;gap:12px;font-size:12px;color:#555;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border:0.5px solid #1e1e1e;border-radius:2px;text-decoration:none;transition:border-color .2s}
+.channel:hover{border-color:#333}
+.channel i{font-size:18px;background:linear-gradient(90deg,#00E5FF,#1D9E75);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lang-row{display:flex;gap:6px;margin-bottom:14px}
+.lang-btn{font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:2px;border:0.5px solid #222;color:#444;background:transparent;font-family:'Nunito Sans',sans-serif;cursor:pointer;transition:all .15s}
+.lang-btn.active{border-color:#00C9A7;color:#00C9A7}
+.cf{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input[type=text],input[type=email]{background:#0f0f0f;border:0.5px solid #222;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;transition:border-color .2s}
+input:focus{border-color:#00C9A7}
+textarea{background:#0f0f0f;border:0.5px solid #222;border-radius:2px;padding:12px 16px;font-size:13px;color:#f5f5f5;font-family:'Nunito Sans',sans-serif;outline:none;width:100%;resize:none;height:96px;transition:border-color .2s}
+textarea:focus{border-color:#00C9A7}
+::placeholder{color:#333}
+.btn-submit{background:linear-gradient(90deg,#00E5FF,#00C9A7 50%,#1D9E75);color:#0a0a0a;border:none;padding:13px 32px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif;border-radius:2px;cursor:pointer;font-weight:500;align-self:flex-start}
+
+/* FOOTER */
+footer{background:#060606;border-top:0.5px solid #111;padding:22px 40px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.12em;color:#222}
+.footer-logo span{background:linear-gradient(90deg,#00E5FF,#1D9E75);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.footer-copy{font-size:11px;color:#2a2a2a;letter-spacing:.06em}
+
+/* SCROLL FADE */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+
+<nav>
+  <img src="SSM.png" alt="Spirit Sports & Marketing" style="height:38px;width:auto;object-fit:contain">
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#events">Events</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-chevron"></div>
+  <div class="hero-block1"></div>
+  <div class="hero-block2"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600&q=80" alt="Athletics"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1600&q=80" alt="Soccer"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1600&q=80" alt="Stadium"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=1600&q=80" alt="Swimming"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=1600&q=80" alt="Rugby"><div class="hero-slide-overlay"></div></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-eyebrow fade-up"><span class="hero-dot"></span>Sports Media Agency — Hong Kong</div>
+      <h1 class="fade-up">Where Sport<br>Meets<span class="boxed"><span class="typewriter" id="tw"></span><span class="cursor" id="cur-blink">|</span></span></h1>
+      <p class="hero-sub fade-up">One-stop sports media agency for broadcast operations, digital content and rights management — from the <span class="gold">Olympics</span> to the World Expo.</p>
+      <div class="hero-actions fade-up">
+        <a href="#services" class="btn-primary">Our Services</a>
+        <a href="#events" class="btn-outline">View Projects</a>
+      </div>
+      <div class="hero-tags fade-up">
+        <span class="hero-tag">Broadcast OPS</span>
+        <span class="hero-tag">Digital Content</span>
+        <span class="hero-tag">Rights &amp; Sponsorship</span>
+        <span class="hero-tag">Est. 2020</span>
+      </div>
+    </div>
+  </div>
+  <button class="hero-arrow hero-arrow-prev" id="heroPrev">&#8592;</button>
+  <button class="hero-arrow hero-arrow-next" id="heroNext">&#8594;</button>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot-btn active"></button>
+    <button class="hero-dot-btn"></button>
+    <button class="hero-dot-btn"></button>
+    <button class="hero-dot-btn"></button>
+    <button class="hero-dot-btn"></button>
+  </div>
+  <div class="hero-counter"><span id="heroCur">1</span> / 5</div>
+</section>
+
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num" data-target="10" data-suffix="+">0</div><div class="stat-label">Olympic Games</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="5" data-suffix="">0</div><div class="stat-label">Continents</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="20" data-suffix="+">0</div><div class="stat-label">Major Events</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="7" data-suffix="">0</div><div class="stat-label">Global Regions</div></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-eyebrow fade-up">What we do</div>
+    <div class="section-title fade-up"><span class="g-text">Our Services</span></div>
+
+    <div class="svc-cards-top fade-up">
+      <div class="svc-card">
+        <div class="svc-card-cover">
+          <img src="sports.png" alt="Broadcast Operations">
+          <div class="svc-cover-inner">
+            <div class="svc-cover-title">Broadcast<br>Operations</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">01 —</div>
+          <div class="svc-card-title-text">Broadcast Operations <i class="ti ti-arrow-up-right"></i></div>
+          <div class="svc-card-tags">
+            <span class="svc-tag" style="background:#d1fae5;color:#065f46">Olympics</span>
+            <span class="svc-tag" style="background:#d1fae5;color:#065f46">FIFA WC</span>
+            <span class="svc-tag" style="background:#d1fae5;color:#065f46">Rugby WC</span>
+          </div>
+          <div class="svc-card-desc">Full venue management for major international sporting events — Olympics, FIFA World Cup, Rugby World Cup and beyond.</div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-cover">
+          <img src="Orange.png" alt="Digital Content">
+          <div class="svc-cover-inner">
+            <div class="svc-cover-title">Digital<br>Content</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">02 —</div>
+          <div class="svc-card-title-text">Digital Content <i class="ti ti-arrow-up-right"></i></div>
+          <div class="svc-card-tags">
+            <span class="svc-tag" style="background:#ffedd5;color:#9a3412">YouTube</span>
+            <span class="svc-tag" style="background:#ffedd5;color:#9a3412">SNS</span>
+            <span class="svc-tag" style="background:#ffedd5;color:#9a3412">Web</span>
+          </div>
+          <div class="svc-card-desc">YouTube, social media and web editorial production tailored for sports organisations across Asia and beyond.</div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-cover">
+          <img src="Blue.png" alt="Rights and Sponsorship">
+          <div class="svc-cover-inner">
+            <div class="svc-cover-title">Rights &<br>Sponsor</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">03 —</div>
+          <div class="svc-card-title-text">Rights &amp; Sponsorship <i class="ti ti-arrow-up-right"></i></div>
+          <div class="svc-card-tags">
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">TV CM</span>
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">Rights</span>
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">Advertising</span>
+          </div>
+          <div class="svc-card-desc">TV commercial slots, digital advertising, sponsorship packages and broadcast rights negotiation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-cards-bot fade-up">
+      <div class="svc-card">
+        <div class="svc-card-cover">
+          <img src="Expo.png" alt="Event Operations">
+          <div class="svc-cover-inner">
+            <div class="svc-cover-title">Event Operations</div>
+            <div class="svc-cover-badge">Osaka Expo 2025</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">04 —</div>
+          <div class="svc-card-title-text">Event Operations <i class="ti ti-arrow-up-right"></i></div>
+          <div class="svc-card-tags">
+            <span class="svc-tag" style="background:#ede9fe;color:#5b21b6">Pavilion Ops</span>
+            <span class="svc-tag" style="background:#ede9fe;color:#5b21b6">National Day</span>
+            <span class="svc-tag" style="background:#ede9fe;color:#5b21b6">Event Planning</span>
+            <span class="svc-tag" style="background:#ede9fe;color:#5b21b6">Vendor Mgmt</span>
+            <span class="svc-tag" style="background:#ede9fe;color:#5b21b6">Stakeholder Mgmt</span>
+          </div>
+          <div class="svc-card-desc">Pavilion operations, National Day management, event planning, vendor management and stakeholder coordination — anchored in Osaka Expo 2025.</div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-card-cover">
+          <img src="AI.png" alt="AI Digital Solutions">
+          <div class="svc-cover-inner">
+            <div class="svc-cover-title">AI Digital<br>Solutions</div>
+            <div class="svc-cover-badge">Powered by Gen AI</div>
+          </div>
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">05 —</div>
+          <div class="svc-card-title-text">AI Digital Solutions <i class="ti ti-arrow-up-right"></i></div>
+          <div class="svc-card-tags">
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">Generative AI</span>
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">Web Dev</span>
+            <span class="svc-tag" style="background:#e0f2fe;color:#0369a1">All Industries</span>
+          </div>
+          <div class="svc-card-desc">Web development, tool development and content production powered by generative AI — serving all industries beyond sports.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="events" id="events">
+  <div class="events-inner">
+    <div class="events-header fade-up">
+      <div>
+        <div class="section-eyebrow">Track record</div>
+        <div class="section-title"><span class="g-text">Milestones</span></div>
+      </div>
+      <div class="events-desc">Working with the world's most prestigious sporting bodies across 7 global regions since 2020.</div>
+    </div>
+
+    <div class="timeline fade-up">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress" id="tlProgress"></div>
+      <div class="tl-years" id="tlYears">
+
+        <div class="tl-col tl-active" data-year="2020">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2020</div>
+          <div class="tl-card">
+            <div class="tl-badge-founded">Founded</div>
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Spirit Sports & Marketing — Hong Kong</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col" data-year="2021">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2021</div>
+          <div class="tl-card">
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Tokyo Olympics & Paralympics</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">FIFA WC Qatar Asian Qualifiers</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col" data-year="2022">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2022</div>
+          <div class="tl-card">
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Beijing Olympics & Paralympics</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">AFC Champions League</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">EAFF / AFC U23 Championship</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">FIA WRC</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Mitsubishi Electric Cup</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col" data-year="2023">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2023</div>
+          <div class="tl-card">
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">AFC U20 Championship</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">AFC Champions League Final</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">World Aquatics Championship</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col" data-year="2024">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-card">
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Paris Olympics & Paralympics</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col" data-year="2025">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2025</div>
+          <div class="tl-card">
+            <div class="tl-badge-founded" style="background:linear-gradient(90deg,#29bcf0,#7c4dff)">Completed</div>
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Expo 2025 Osaka Kansai</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-col tl-future" data-year="2026">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2026</div>
+          <div class="tl-card">
+            <div class="tl-badge-now">Upcoming</div>
+            <div class="tl-events">
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Milan Cortina Winter Olympics</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Asian Games</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">AI-Powered Web Development</div></div>
+              <div class="tl-event"><div class="tl-edot"></div><div class="tl-etext">Trent Media Works — Launch (Japan)</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="logo-strip fade-up" style="margin-top:48px">
+      <span class="logo-pill gold">Olympics</span>
+      <span class="logo-pill gold">Paralympics</span>
+      <span class="logo-pill gold">FIFA World Cup</span>
+      <span class="logo-pill gold">Rugby World Cup</span>
+      <span class="logo-pill">AFC</span>
+      <span class="logo-pill">EAFF</span>
+      <span class="logo-pill">FINA</span>
+      <span class="logo-pill">FIA</span>
+      <span class="logo-pill">Asian Games</span>
+      <span class="logo-pill">Osaka Expo 2025</span>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">About</div>
+      <div class="about-quote">The person<br>behind <span class="g-text">the story.</span></div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#29bcf0,#7c4dff);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;flex-shrink:0">HO</div>
+        <div>
+          <div style="font-size:16px;font-weight:600;color:#111;font-family:'Nunito Sans',sans-serif">Hiro Ono</div>
+          <div style="font-size:12px;color:#00A882;letter-spacing:.1em;text-transform:uppercase;font-family:'Nunito Sans',sans-serif">Founder, Spirit Sports & Marketing</div>
+        </div>
+      </div>
+      <div class="about-body">With over 20 years of experience in sports broadcasting and media, Hiro Ono has worked across Asia, Europe and Oceania — spanning 25+ countries. A certified PMP (Project Management Professional), Hiro founded Spirit Sports & Marketing in Hong Kong in 2020 to bridge elite sporting events with global audiences.</div>
+      <div class="about-meta">
+        <div><div class="meta-label">Experience</div><div class="meta-val">20+ Years</div></div>
+        <div><div class="meta-label">Countries</div><div class="meta-val">25+ Countries</div></div>
+        <div><div class="meta-label">Certification</div><div class="meta-val">PMP Certified</div></div>
+        <div><div class="meta-label">Based</div><div class="meta-val">Hong Kong</div></div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="section-eyebrow" style="margin-bottom:16px">Global Coverage</div>
+      <img src="map.png" alt="Global Coverage Map" style="width:100%;border-radius:6px;display:block;margin-bottom:16px">
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">ASEAN</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">Oceania</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">Middle East</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">Europe</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">East Asia</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">Central Asia</span>
+        <span style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#00A882;padding:3px 10px;border:0.5px solid rgba(0,168,130,.3);border-radius:20px">South Asia</span>
+      </div>
+      <div style="margin-top:32px;padding-top:24px;border-top:0.5px solid #e0e0dc">
+        <div class="section-eyebrow" style="margin-bottom:16px">Company</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div><div class="meta-label">Founded</div><div class="meta-val">2020, Hong Kong</div></div>
+          <div><div class="meta-label">Languages</div><div class="meta-val">EN / JA / ZH</div></div>
+          <div><div class="meta-label">Focus</div><div class="meta-val">Sports Media</div></div>
+          <div><div class="meta-label">Coverage</div><div class="meta-val">7 Global Regions</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Get in touch</div>
+      <div class="contact-h"><span class="g-text">Let's Work</span><br>Together</div>
+      <div class="contact-sub">Whether you're a broadcaster, federation, or brand — we'd love to hear about your project.</div>
+      <div class="channels">
+        <a href="mailto:hiroaki.ono@spiritsports.com.hk" class="channel"><i class="ti ti-mail"></i> hiroaki.ono@spiritsports.com.hk</a>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="lang-row">
+        <button class="lang-btn active">EN</button>
+        <button class="lang-btn">日本語</button>
+        <button class="lang-btn">繁中</button>
+      </div>
+      <div class="cf">
+        <div class="form-row">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Organisation">
+        </div>
+        <input type="email" placeholder="Email address">
+        <textarea placeholder="Tell us about your project…"></textarea>
+        <button class="btn-submit">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TRENT MEDIA WORKS -->
+<section style="background:#f4f5f7;padding:72px 40px;border-top:0.5px solid #e0e0e0">
+  <div style="max-width:1000px;margin:0 auto">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin-bottom:32px;font-family:'Nunito Sans',sans-serif">
+      <span style="width:5px;height:5px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#6366f1);display:inline-block"></span>
+      Sister Brand — Coming 2026
+    </div>
+    <div style="background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:280px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+      <div style="background:#0c1220;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(99,102,241,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.06) 1px,transparent 1px);background-size:32px 32px"></div>
+        <div style="position:absolute;top:-60px;left:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.08) 0%,transparent 70%)"></div>
+        <div style="position:relative;z-index:1">
+          <img src="Trent_Logo.png" alt="Trent Media Works" style="height:64px;width:auto;object-fit:contain;margin-bottom:16px;display:block">
+          <div style="display:inline-flex;align-items:center;gap:6px;font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:rgba(99,102,241,.12);color:#818cf8;padding:5px 12px;border-radius:20px;border:0.5px solid rgba(99,102,241,.2)">
+            <span style="width:5px;height:5px;border-radius:50%;background:#818cf8;display:inline-block"></span>Est. 2026 — Japan
+          </div>
+        </div>
+        <div style="position:relative;z-index:1;font-family:'Nunito Sans',sans-serif;font-size:13px;color:#4a6080;line-height:1.7;font-weight:300;max-width:280px">A digital solutions company powered by generative AI. Supporting web, tool, and content production across all industries.</div>
+      </div>
+      <div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;background:#fff">
+        <div>
+          <div style="font-family:'Nunito Sans',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;margin-bottom:20px">Services</div>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:0.5px solid #f0f0f0">
+              <div style="width:36px;height:36px;border-radius:6px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#38bdf8"><i class="ti ti-code"></i></div>
+              <div><div style="font-family:'Nunito Sans',sans-serif;font-size:13px;font-weight:500;color:#111;margin-bottom:2px">Web Development</div><div style="font-family:'Nunito Sans',sans-serif;font-size:11px;color:#aaa;font-weight:300">Modern web development powered by generative AI</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:0.5px solid #f0f0f0">
+              <div style="width:36px;height:36px;border-radius:6px;background:#eef2ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#818cf8"><i class="ti ti-tool"></i></div>
+              <div><div style="font-family:'Nunito Sans',sans-serif;font-size:13px;font-weight:500;color:#111;margin-bottom:2px">Tool Development</div><div style="font-family:'Nunito Sans',sans-serif;font-size:11px;color:#aaa;font-weight:300">Design and development of automation & efficiency tools</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 0">
+              <div style="width:36px;height:36px;border-radius:6px;background:#f5f3ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#a78bfa"><i class="ti ti-sparkles"></i></div>
+              <div><div style="font-family:'Nunito Sans',sans-serif;font-size:13px;font-weight:500;color:#111;margin-bottom:2px">Content Production</div><div style="font-family:'Nunito Sans',sans-serif;font-size:11px;color:#aaa;font-weight:300">AI-powered creative content production</div></div>
+            </div>
+          </div>
+        </div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-family:'Nunito Sans',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(90deg,#38bdf8,#818cf8 50%,#6366f1);color:#fff;padding:10px 22px;border-radius:3px;font-weight:500;text-decoration:none;align-self:flex-start;margin-top:20px">Learn More <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="SSM.png" alt="Spirit Sports & Marketing" style="height:28px;width:auto;object-fit:contain;opacity:.4">
+  <div class="footer-copy">© 2025 Spirit Sports &amp; Marketing Limited — Hong Kong</div>
+</footer>
+
+<script>
+// scroll fade-up
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => {
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+});
+
+// countup
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const start = performance.now();
+  function update(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target) + suffix;
+    if (p < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+let statsFired = false;
+const statsEl = document.querySelector('.stats');
+const statsObs = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !statsFired) {
+    statsFired = true;
+    document.querySelectorAll('.stat-num[data-target]').forEach((el, i) => {
+      setTimeout(() => animateCount(el), i * 120);
+    });
+  }
+}, { threshold: 0.5 });
+statsObs.observe(statsEl);
+
+// lang toggle
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// typewriter
+(function(){
+  const el = document.getElementById('tw');
+  const cursor = document.getElementById('cur-blink');
+  const text = 'Story.';
+  let i = 0;
+  function type() {
+    if (i <= text.length) {
+      el.textContent = text.slice(0, i);
+      i++;
+      setTimeout(type, i === 1 ? 800 : 110);
+    } else {
+      cursor.style.display = 'none';
+    }
+  }
+  setTimeout(type, 1200);
+})();
+
+// timeline
+(function(){
+  const cols = document.querySelectorAll('.tl-col');
+  const progress = document.getElementById('tlProgress');
+  const container = document.getElementById('tlYears');
+  function updateProgress() {
+    if (!container) return;
+    const past = Array.from(cols).filter(c => !c.classList.contains('tl-future'));
+    const last = past[past.length - 1];
+    if (!last) return;
+    const cr = container.getBoundingClientRect();
+    const lr = last.getBoundingClientRect();
+    const pct = ((lr.left + lr.width / 2 - cr.left) / cr.width) * 100;
+    if (progress) progress.style.width = pct + '%';
+  }
+  cols.forEach(col => {
+    col.addEventListener('mouseenter', () => {
+      cols.forEach(c => c.classList.remove('tl-active'));
+      col.classList.add('tl-active');
+    });
+    col.addEventListener('mouseleave', () => {
+      cols.forEach(c => c.classList.remove('tl-active'));
+      const first = document.querySelector('[data-year="2020"]');
+      if (first) first.classList.add('tl-active');
+    });
+  });
+  setTimeout(updateProgress, 200);
+  window.addEventListener('resize', updateProgress);
+})();
+(function(){
+  const slides = document.getElementById('heroSlides');
+  const dotBtns = document.querySelectorAll('.hero-dot-btn');
+  const curEl = document.getElementById('heroCur');
+  const total = 5;
+  let cur = 0, timer;
+  function goTo(n) {
+    cur = (n + total) % total;
+    slides.style.transform = `translateX(-${cur * 20}%)`;
+    dotBtns.forEach((d,i) => d.classList.toggle('active', i === cur));
+    curEl.textContent = cur + 1;
+  }
+  function start() { clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 4500); }
+  document.getElementById('heroNext').onclick = () => { goTo(cur + 1); start(); };
+  document.getElementById('heroPrev').onclick = () => { goTo(cur - 1); start(); };
+  dotBtns.forEach((d,i) => d.addEventListener('click', () => { goTo(i); start(); }));
+  let sx = 0;
+  slides.addEventListener('touchstart', e => sx = e.touches[0].clientX);
+  slides.addEventListener('touchend', e => {
+    const dx = sx - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 50) { goTo(dx > 0 ? cur + 1 : cur - 1); start(); }
+  });
+  start();
+})();
+</script>
+</body>
+</html>
